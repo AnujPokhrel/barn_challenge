@@ -57,6 +57,17 @@ rosdep init; rosdep update
 rosdep install -y --from-paths . --ignore-src --rosdistro=<YOUR_ROS_VERSION>
 ```
 
+<Extra Step> Remove default jackal_helper and get a new one
+
+```
+cd nav-competition-icra2022
+rm -r jackal_helper -f
+cd ..
+cd barn_challenge
+mv jackal_helper ../
+cd ..
+```
+
 6. Build the workspace (if `catkin_make` fails, try changing `-std=c++11` to `-std=c++17` in `jackal_helper/CMakeLists.txt` line 3)
 ```
 source devel/setup.bash
